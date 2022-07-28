@@ -11,6 +11,7 @@ function App() {
     <div>
       <BrowserRouter>
         <nav>
+          <Link to="/">Explore</Link> |{" "}
           <Link to="Drinks">Drinks</Link> |{" "}
           <Link to="Snacks">Snacks</Link> |{" "}
           <Link to="Grocery">Grocery</Link>
