@@ -1,11 +1,22 @@
+import ItemCardSmall from "./ItemCardSmall";
+import items from "./products.js";
+import "./Snacks.css"
 
-function Snacks() {
-    return (
-      <body className = "Snacks">
+
+const Snacks = () => {
+    const productComponents = items.map((item) => {
+        return (
+          <ItemCardSmall
+            key={item.id}
+            name={item.name}
+            price={item.cost}
+          />
+        );
+      });
+      return <div className="products">
         <h1>Snacks</h1>
-      </body>
-      
-    );
+        <div className="product-grid">{productComponents}</div>
+        </div>;
   }
   
-  export default Snacks;
+export default Snacks;
