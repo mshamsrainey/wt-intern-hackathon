@@ -1,5 +1,5 @@
 import ItemCardSmall from "./ItemCardSmall";
-import items from "./products.js";
+import items from "./database/snacks-list.js";
 import "./Snacks.css"
 
 
@@ -10,6 +10,7 @@ const Snacks = () => {
             key={item.id}
             name={item.name}
             price={item.cost}
+            image={item.image}
           />
         );
       });

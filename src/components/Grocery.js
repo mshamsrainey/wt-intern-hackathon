@@ -1,5 +1,5 @@
 import ItemCardSmall from "./ItemCardSmall";
-import items from "./products.js";
+import items from "./database/groceries-list.js";
 
 function Grocery() {
     const productComponents = items.map((item) => {
@@ -8,6 +8,7 @@ function Grocery() {
             key={item.id}
             name={item.name}
             price={item.cost}
+            image={item.image}
           />
         );
       });

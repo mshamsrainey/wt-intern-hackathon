@@ -1,5 +1,5 @@
 import ItemCardSmall from "./ItemCardSmall";
-import items from "./products.js";
+import items from "./database/drinks-list.js";
 
 function Drinks() {
     const productComponents = items.map((item) => {
@@ -8,6 +8,7 @@ function Drinks() {
             key={item.id}
             name={item.name}
             price={item.cost}
+            image={item.image}
           />
         );
       });
