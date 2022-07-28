@@ -4,12 +4,23 @@ import './index.css';
 import App from './App';
 import { BrowserRouter } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
+import { SpeechProvider } from "@speechly/react-client";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
+);
+
+// Speechly setup
+ReactDOM.render(
+  <React.StrictMode>
+    <SpeechProvider appId="a3a4ebec-c7fc-40c9-b370-e3b819c6d15f">
+      <App />
+    </SpeechProvider>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
