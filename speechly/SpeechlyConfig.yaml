@@ -1,0 +1,81 @@
+imports: 
+
+  - name: sample_items
+    source: sample_items.csv
+    field: 1
+
+entities:
+
+  - name: items
+    type: string
+
+templates: |
+
+  items = $sample_items(items)
+
+  displayPhrases = ![show me | go to | navigate to | display | show | i want | see | view | pull up]
+  prepositionPhrases = [for | about | with | on | of the | for the]
+  timeFrame = [now | right now | today | this afternoon | this morning | this evening | tonight]
+
+  *info_bathrooms does your ![store | gas station | location] have [restrooms | bathrooms | a bathroom | a restroom]
+  *info_bathrooms is there a ![bathroom | restroom] inside {![your | the] store}
+  *info_bathrooms do you have a ![bathroom | restroom] {![in the store | inside | in your store | anywhere]}
+  *info_bathrooms where is your ![restroom | bathroom]
+  *info_hours what are ![your | your store's | your convenience store | your store | your convenience store's | the store] hours
+  *info_hours how late is ![your store | the store | the convenience store | your convenience store | the shop | your shop] open
+  *info_hours how late does ![your store | the store | the convenience store | your convenience store | the shop | your shop] [stay open | sell food | sell drinks]
+  *info_hours when does ![your store | the store | the convenience store | your convenience store | your shop | the shop] ![open | close]
+  *info_hours how early is ![your store | the store | the convenience store | your convenience store | the shop | your shop] open
+  *info_hours early does ![your store | the store | the convenience store | your convenience store | the shop | your shop] open
+  *info_hours when does ![your store | the store | the convenience store | your convenience store | the shop | your shop] open
+  *info_hours how ![early | late] are you open
+  *info_hours is ![your store | the store | the convenience store | the shop | your shop] open {![now | right now | today]}
+  *info_carwash does your ![gas station | location | convenience store | store| shop] have a car wash
+  *info_carwash how much does a car wash cost
+  *info_carwash do you offer car washes
+  *info_carwash can i get my car washed here
+  *info_carwash is there somewhere here that i can wash my car
+  *info_vacuum do you have a vacuum
+  *info_vacuum is there a vacuum anywhere {that i can use}
+  *info_vacuum where is your vacuum {![located | at]}
+  *info_vacuum how much does it cost to use your vacuum
+  *info_vacuum how much is it to use your vacuum
+  *info_tirepumps does your ![store | location | gas station | station] have a tire pump
+  *info_tirepumps where is your ![air | tire] pump {located}
+  *info_tirepumps do you have a tire pump
+  *info_tirepumps how much does your ![air pump | tire pump] cost {to use}
+  *info_tirepumps how much does it cost to ![fill up | put air in] my tires
+  *info_tirepumps is there somewhere i can [fill up | put air into] my tires
+
+  *shop_checkitem do you sell $items
+  *shop_checkitem do you have any $items
+  *shop_checkitem do you carry $items
+  *shop_checkitem is $items available
+  *shop_checkitem $displayPhrases {the listing for} $items
+  *shop_checkitem i'm looking for $items
+  *shop_checkitem how much does $items cost
+  *shop_checkitem i want $items
+  *shop_previous_order $displayPhrases ![my last order | my previous order | my order from last time | what i bought last time | the same thing i got last time | the same thing i ordered last time | my old order]
+  *shop_previous_order i want {to order} the same thing i got last time
+  *shop_additem i want to ![get | buy | purchase] $items
+  *shop_additem i want $items
+  *shop_additem add $items to my ![cart | shopping cart | shopping list | list]
+  *shop_additem put $items in my ![cart | shopping cart | shopping list | list]
+  *shop_featured what {![prodcuts | items | things]} would you recommend
+  *shop_featured is there anything ![you recommend | on sale]
+  *shop_featured is anything on sale
+  *shop_featured are there any ![sales | deals | discounted items | things on sale]
+  *shop_cart what all is in my cart
+  *shop_cart $displayPhrases ![what's in my cart | my shopping cart | my cart | what's in my shopping cart | the things in my cart]
+  *shop_cart what's in my cart
+  *shop_recent what did i buy last time
+  *shop_recent $displayPhrases ![my previous orders | old orders | my past orders | what i've gotten before]
+  *shop_recent i liked what i bought last time
+  *shop_recent $displayPhrases my favorite items
+  *shop_recent $displayPhrases my favorites
+  *shop_recent i want to order ![my favorites | my favorite items | one of my favorites | something from my favorites list]
+  *shop_checkout i'm ready to ![check out | place my order]
+  *shop_checkout check out
+  *shop_checkout place my order
+  *shop_checkout that's all that i want
+  *shop_checkout that's it
