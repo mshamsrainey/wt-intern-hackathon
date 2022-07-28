@@ -7,7 +7,7 @@ function Grocery() {
           <ItemCardSmall
             key={item.id}
             name={item.name}
-            price={item.price}
+            price={item.cost}
           />
         );
       });

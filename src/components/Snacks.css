@@ -4,7 +4,7 @@
 
 .product-grid {
     display:grid;
-    grid-template-columns: 300px 300px 300px;
+    grid-template-columns: 200px 300px 300px;
     gap:10px;
     flex-wrap: wrap;
 }

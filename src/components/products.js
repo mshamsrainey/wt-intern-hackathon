@@ -1,12 +1,22 @@
 export default [
     {
-      id: "some-random-id-1",
-      name: "Can of Beans",
-      price: 8.99,
+        "name": "milk",
+        "cost": 3.75
     },
     {
-      id: "some-random-id-2",
-      name: "Naruto's Ramen",
-      price: 28.99,
+        "name": "bread",
+        "cost": 2.00
+    },
+    {
+        "name": "water",
+        "cost": 1.00
+    },
+    {
+        "name": "salad",
+        "cost": 5.00
+    },
+    {
+        "name": "candy",
+        "cost": 7.00
     },
   ];
