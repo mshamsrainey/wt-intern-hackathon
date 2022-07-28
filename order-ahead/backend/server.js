@@ -6,7 +6,7 @@ let path = require("path")
 let process = require("process");
 let bodyparser = require("body-parser");
 
-const cors = require("cors");
+let cors = require("cors");
 
 
 let portNumber = process.argv[2]
@@ -26,6 +26,50 @@ process.stdin.on('readable', function () {
 
     console.log("stop to shutdown the server: ");
 });
+
+require("dotenv").config({ path: path.resolve(__dirname, 'credentialsDontPost/.env') })
+const userName = process.env.MONGO_DB_USERNAME;
+const password = process.env.MONGO_DB_PASSWORD;
+
+const databaseAndCollection = { db: "Catalog", collection: "previousOrders" };
+
+const { MongoClient, ServerApiVersion } = require('mongodb');
+
+
+app.set("views", path.resolve(__dirname, "templates"));
+app.set("view engine", "ejs");
+
+app.use(bodyparser.urlencoded({ extended: false }));
+app.post("/processApplication", async (request, response) => {
+    async function main() {
+        const uri = `mongodb+srv://${userName}:${password}@cluster0.tkgfi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+        const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+        try {
+            await client.connect();
+            let filter = {
+                number: request.body.number,
+            };
+
+            await insert(client, databaseAndCollection, filter);
+
+        } catch (e) {
+            console.error(e);
+        } finally {
+            await client.close();
+        }
+    }
+    let inp = {
+      number: request.body.number,
+  
+        time: new Date()
+    }
+    main().catch(console.error)
+    response.render("processApplication", inp);
+});
+
+
+
+
 
 
 
