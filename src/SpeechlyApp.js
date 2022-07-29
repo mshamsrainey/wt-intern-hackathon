@@ -6,6 +6,13 @@ const SpeechlyApp = function() {
 
   useEffect(() => {
     if (segment) {
+        if (segment.entities) {
+            segment.entities.forEach(entity => {
+                console.log(entity);
+            })
+        } if (segment.intent) {
+            console.log(segment.intent);
+        }
       // Handle speech segment and make tentative changes to app state
       console.log(segment);
       if (segment.isFinal) {
