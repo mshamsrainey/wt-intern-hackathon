@@ -26,6 +26,8 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import styled from 'styled-components';
 
+import IconButton from '@mui/material/IconButton';
+import { ShoppingCart } from '@mui/icons-material';
 
 function App() {
   const [value, setValue] = React.useState(0);
@@ -132,7 +134,12 @@ function App() {
         </React.Fragment>
       )}
     </Box>
-
+    <Box display="flex" justifyContent="right" width="100%">
+      <IconButton>
+        < ShoppingCart style={{fontSize:"50px"}}/>
+      </IconButton>
+      <div className="cart-price">$0.00</div>
+    </Box>
         <Box display="flex" justifyContent="center" width="100%">
           <Tabs
             value={value}
