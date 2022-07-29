@@ -137,10 +137,10 @@ function App() {
             scrollButtons="auto"
             aria-label="scrollable auto tabs example"
           >
-            <Tab label="Explore" component={Link} to="/" />
-            <Tab label="Drinks" component={Link} to="/Drinks" />
-            <Tab label="Snacks" component={Link} to="/Snacks" />
-            <Tab label="Grocery" component={Link} to="/Grocery" />
+            <Tab label="Explore" component={Link} to="/" style={{fontSize:"20px", margin:"10px"}}/>
+            <Tab label="Drinks" component={Link} to="/Drinks" style={{fontSize:"20px", margin:"10px"}}/>
+            <Tab label="Snacks" component={Link} to="/Snacks" style={{fontSize:"20px", margin:"10px"}}/>
+            <Tab label="Grocery" component={Link} to="/Grocery" style={{fontSize:"20px", margin:"10px"}}/>
           </Tabs>
         </Box>
         <Routes>

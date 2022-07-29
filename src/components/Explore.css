@@ -1,0 +1,10 @@
+.Explore {
+    padding-left: 40px;
+}
+
+.featured-grid {
+    width: 53%;
+    display:grid;
+    grid-template-columns: auto auto auto auto;
+    gap:15px;
+}
