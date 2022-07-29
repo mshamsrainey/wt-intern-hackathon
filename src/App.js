@@ -16,6 +16,16 @@ import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import SpeechlyApp from './SpeechlyApp'
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import EditIcon from '@mui/icons-material/Edit';
+import Divider from '@mui/material/Divider';
+import ArchiveIcon from '@mui/icons-material/Archive';
+import FileCopyIcon from '@mui/icons-material/FileCopy';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import styled from 'styled-components';
+
 
 function App() {
   const [value, setValue] = React.useState(0);
@@ -69,8 +79,19 @@ function App() {
   const handleReset = () => {
     setActiveStep(0);
   };
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+
   return (
-    <div>
+    <div className="whitespace">
       <BrowserRouter>
       <Box sx={{ width: '100%' }}>
       <Stepper activeStep={activeStep}>
@@ -99,31 +120,14 @@ function App() {
           </Typography>
           <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
             <Box sx={{ flex: '1 1 auto' }} />
-            <Button onClick={handleReset}>Reset</Button>
           </Box>
         </React.Fragment>
       ) : (
         <React.Fragment>
-          <Typography sx={{ mt: 2, mb: 1 }}>Step {activeStep + 1}</Typography>
+          
           <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-            <Button
-              color="inherit"
-              disabled={activeStep === 0}
-              onClick={handleBack}
-              sx={{ mr: 1 }}
-            >
-              Back
-            </Button>
-            <Box sx={{ flex: '1 1 auto' }} />
-            {isStepOptional(activeStep) && (
-              <Button color="inherit" onClick={handleSkip} sx={{ mr: 1 }}>
-                Skip
-              </Button>
-            )}
 
-            <Button onClick={handleNext}>
-              {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-            </Button>
+            <Box sx={{ flex: '1 1 auto' }} />
           </Box>
         </React.Fragment>
       )}
@@ -143,6 +147,37 @@ function App() {
             <Tab label="Grocery" component={Link} to="/Grocery" style={{fontSize:"20px", margin:"10px"}}/>
           </Tabs>
         </Box>
+
+        <Button variant="contained">FILTER</Button>
+        <Button
+        id="demo-positioned-button"
+        aria-controls={open ? 'demo-positioned-menu' : undefined}
+        aria-haspopup="true"
+        aria-expanded={open ? 'true' : undefined}
+        onClick={handleClick}
+      >
+        SORT BY:
+      </Button>
+      <Menu
+        id="demo-positioned-menu"
+        aria-labelledby="demo-positioned-button"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'left',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'left',
+        }}
+      >
+        <MenuItem onClick={handleClose}>LOW TO HIGH</MenuItem>
+        <MenuItem onClick={handleClose}>HIGH TO LOW</MenuItem>
+        <MenuItem onClick={handleClose}>POPULARITY</MenuItem>
+      </Menu>
+        
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Explore />} />
