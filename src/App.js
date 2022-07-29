@@ -1,5 +1,6 @@
 import './App.css';
 import { BrowserRouter, Routes, Route, Link, Router } from "react-router-dom";
+import { PushToTalkButton, BigTranscript, IntroPopup } from "@speechly/react-ui";
 import Layout from "./components/Layout"
 import Explore from "./components/Explore"
 import Snacks from "./components/Snacks"
@@ -14,6 +15,7 @@ import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import SpeechlyApp from './SpeechlyApp'
 
 function App() {
   const [value, setValue] = React.useState(0);
@@ -150,8 +152,15 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
+      <div className="Speechly">
+        <BigTranscript placement="top"/>
+        <PushToTalkButton placement="bottom" captureKey=' '/>
+        <IntroPopup />
+        <SpeechlyApp />
+      </div>
     </div>
   );
 }
+
 
 export default App;
