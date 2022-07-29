@@ -43,7 +43,7 @@ function Explore() {
           </div>
         </Box>
         <br/>
-        <Box sx={{ width: '15%' }}>
+        <Box sx={{ width: '25%' }}>
           <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
             <Tabs>
               <Tab label="FEATURED ITEMS" style={{fontSize:"20px"}}/>
