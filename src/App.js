@@ -14,6 +14,8 @@ import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Stack from '@mui/material/Stack';
+
 
 function App() {
   const [value, setValue] = React.useState(0);
@@ -68,7 +70,7 @@ function App() {
     setActiveStep(0);
   };
   return (
-    <div>
+    <div className="whitespace">
       <BrowserRouter>
       <Box sx={{ width: '100%' }}>
       <Stepper activeStep={activeStep}>
@@ -102,29 +104,16 @@ function App() {
         </React.Fragment>
       ) : (
         <React.Fragment>
-          <Typography sx={{ mt: 2, mb: 1 }}>Step {activeStep + 1}</Typography>
+          
           <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-            <Button
-              color="inherit"
-              disabled={activeStep === 0}
-              onClick={handleBack}
-              sx={{ mr: 1 }}
-            >
-              Back
-            </Button>
+           
             <Box sx={{ flex: '1 1 auto' }} />
-            {isStepOptional(activeStep) && (
-              <Button color="inherit" onClick={handleSkip} sx={{ mr: 1 }}>
-                Skip
-              </Button>
-            )}
 
-            <Button onClick={handleNext}>
-              {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-            </Button>
           </Box>
         </React.Fragment>
       )}
+
+
     </Box>
 
         <Box display="flex" justifyContent="center" width="100%">
@@ -141,6 +130,11 @@ function App() {
             <Tab label="Grocery" component={Link} to="/Grocery" />
           </Tabs>
         </Box>
+
+        <Stack spacing={2} direction="row">
+      <Button variant="contained" >FILTER </Button>
+    </Stack>
+    
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Explore />} />
@@ -149,9 +143,13 @@ function App() {
             <Route path="Grocery" element={<Grocery />} />
           </Route>
         </Routes>
+
+        
       </BrowserRouter>
     </div>
   );
+
+  
 }
 
 export default App;

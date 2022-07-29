@@ -14,7 +14,7 @@ const Snacks = () => {
         );
       });
       return <div className="products">
-        <h1>Snacks</h1>
+        
         <div className="product-grid">{productComponents}</div>
         </div>;
   }

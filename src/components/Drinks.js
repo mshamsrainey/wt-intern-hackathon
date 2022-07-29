@@ -12,7 +12,7 @@ function Drinks() {
         );
       });
       return <div className="products">
-        <h1>Drinks</h1>
+        
         <div className="product-grid">{productComponents}</div>
         </div>;
   }
