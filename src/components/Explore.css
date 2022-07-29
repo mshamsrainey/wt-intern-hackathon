@@ -3,7 +3,7 @@
 }
 
 .featured-grid {
-    width: 53%;
+    width: 65%;
     display:grid;
     grid-template-columns: auto auto auto auto;
     gap:15px;
