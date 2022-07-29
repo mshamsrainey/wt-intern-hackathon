@@ -15,7 +15,9 @@ import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import SpeechlyApp from './SpeechlyApp'
+import SpeechlyApp from './SpeechlyApp';
+import IconButton from '@mui/material/IconButton';
+import { ShoppingCart } from '@mui/icons-material';
 
 function App() {
   const [value, setValue] = React.useState(0);
@@ -128,7 +130,12 @@ function App() {
         </React.Fragment>
       )}
     </Box>
-
+    <Box display="flex" justifyContent="right" width="100%">
+      <IconButton>
+        < ShoppingCart style={{fontSize:"50px"}}/>
+      </IconButton>
+      <div className="cart-price">$0.00</div>
+    </Box>
         <Box display="flex" justifyContent="center" width="100%">
           <Tabs
             value={value}

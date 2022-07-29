@@ -28,13 +28,13 @@ function Explore() {
           noValidate
           autoComplete="off"
         >
-          <div>
+          <div className="search-bar">
             <TextField 
               id="outlined-search"
               sx={{
                 width: { sm: 900, md: 900 },
                 "& .MuiInputBase-root": {
-                  height: 60
+                height: 60,
                 }
               }}
               label="SEARCH FOR AN ITEM..." 
