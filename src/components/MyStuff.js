@@ -3,7 +3,7 @@ import React from 'react';
 import CartItem from "./CartItem";
 
 function MyStuff() {
-    const cartComponentTest = items.map((item) =>{
+/*     const cartComponentTest = items.map((item) =>{
         return (
             <CartItem
                 key={item.id}
@@ -12,10 +12,10 @@ function MyStuff() {
                 image={item.image}
             />
         );
-    });
+    }); */
     return <div className="products">
      
-        <div className="product-grid">{cartComponentTest}</div>
+        {/* <div className="product-grid">{cartComponentTest}</div> */}
         </div>;
 }
 export default MyStuff

@@ -77,6 +77,19 @@ const SpeechlyApp = function () {
               progress: undefined,
             });
             break;
+          case "":
+            break;
+          default:
+            toast.info("We heard you, and we're working on making this voice-controllable!", {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+            });
+            
         }
       }
     }
