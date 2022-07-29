@@ -23,7 +23,7 @@ const ItemCardSmall = (props) => {
           image={props.image}
           alt="">
         </CardMedia>
-        <CardContent>
+        <CardContent style={{textAlign:"center"}}>
           {<Typography gutterBottom variant="h5" component="div">
             {props.name}
           </Typography>}
