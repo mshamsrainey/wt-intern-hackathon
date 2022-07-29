@@ -1,6 +1,6 @@
 import items from "./database/groceries-list.js";
-import React from 'react'
-import CartItem from "./CartItem"
+import React from 'react';
+import CartItem from "./CartItem";
 
 function MyStuff() {
     const cartComponentTest = items.map((item) =>{
