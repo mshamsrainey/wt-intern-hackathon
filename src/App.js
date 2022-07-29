@@ -6,6 +6,7 @@ import Explore from "./components/Explore"
 import Snacks from "./components/Snacks"
 import Drinks from "./components/Drinks"
 import Grocery from "./components/Grocery"
+import MyStuff from "./components/MyStuff"
 import * as React from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -149,6 +150,7 @@ function App() {
             aria-label="scrollable auto tabs example"
           >
             <Tab label="Explore" component={Link} to="/" style={{fontSize:"20px", margin:"10px"}}/>
+            <Tab label="My Stuff" component={Link} to="/MyStuff" style={{fontSize:"20px", margin:"10px"}}/>
             <Tab label="Drinks" component={Link} to="/Drinks" style={{fontSize:"20px", margin:"10px"}}/>
             <Tab label="Snacks" component={Link} to="/Snacks" style={{fontSize:"20px", margin:"10px"}}/>
             <Tab label="Grocery" component={Link} to="/Grocery" style={{fontSize:"20px", margin:"10px"}}/>
@@ -188,6 +190,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Explore />} />
+            <Route path="MyStuff" element={<MyStuff />} />
             <Route path="Drinks" element={<Drinks />} />
             <Route path="Snacks" element={<Snacks />} />
             <Route path="Grocery" element={<Grocery />} />
